@@ -1,0 +1,45 @@
+@import"./../../styles/abstract";
+
+#main {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    height: 40px;
+    border-bottom: 1px solid rgba($dm-black, .15);
+
+    .navbar-brand {
+      text-decoration: none;
+      color: $dm-black;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .links-nav {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: unset;
+        }
+
+        a {
+          text-decoration: none;
+          color: $dm-black;
+        }
+      }
+    }
+  }
+
+  .dark-mode {
+    header {}
+  }
+}
