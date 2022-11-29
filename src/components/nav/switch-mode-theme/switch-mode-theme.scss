@@ -1,0 +1,29 @@
+@import "./../../../styles/abstract";
+
+main {
+  .btn-mode-theme {
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+main.dark-mode {
+  .btn-mode-theme {
+    background-color: $dm-white;
+    color: $dm-black;
+    border: 2px solid $dm-white;
+
+    &:hover {
+      background-color: transparent;
+      color: $dm-white;
+      border: 2px solid $dm-white;
+    }
+  }
+}

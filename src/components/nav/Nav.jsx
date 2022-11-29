@@ -1,8 +1,9 @@
 import React from 'react'
+import SwitchModeTheme from './switch-mode-theme/SwitchModeTheme'
 
 function Nav() {
   return (
-    <nav>Nav</nav>
+    <nav>Nav <SwitchModeTheme /></nav>
   )
 }
 
