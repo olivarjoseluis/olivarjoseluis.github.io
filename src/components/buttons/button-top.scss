@@ -1,0 +1,35 @@
+@import "./../../styles/abstract";
+
+.top {
+  transition: width 2s, height 2s, background-color .5s, transform 2s;
+  display: none;
+  position: fixed;
+  padding: 8px 13px;
+  font-size: 20px;
+  bottom: 40px;
+  right: 20px;
+  background-color: rgba($dm-black, .2);
+  color: rgba($dm-white, .8);
+  text-align: center;
+  border: unset;
+  cursor: pointer;
+
+  &.active {
+    display: block;
+  }
+
+  &:hover {
+    background-color: rgba($dm-black, .8);
+  }
+}
+
+.dark-mode {
+  .top {
+    background-color: rgba($dm-white, .2);
+    color: rgba($dm-black, .8);
+
+    &:hover {
+      background-color: rgba($dm-white, .8);
+    }
+  }
+}

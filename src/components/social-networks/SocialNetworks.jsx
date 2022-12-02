@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter, faLinkedin, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { } from '@fortawesome/free-solid-svg-icons';
 import "./social-networks.scss";
 
@@ -21,11 +21,6 @@ const SocialNetworks = () => {
         <li>
           <a href="https://twitter.com/olivarluisjose" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon className='icon-social-network' icon={faTwitter} />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/olivarjose/" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon className='icon-social-network' icon={faFacebookF} />
           </a>
         </li>
       </ul>

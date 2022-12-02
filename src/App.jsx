@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import './App.css'
 import Aboutme from './components/about-me/Aboutme'
+import ButtonTop from './components/buttons/ButtonTop';
 import Courses from './components/courses/Courses';
 import GetInTouch from './components/get-in-touch/GetInTouch';
 import Great from './components/great/Great';
@@ -23,6 +24,7 @@ function App() {
           <Skills />
           <Courses />
           <GetInTouch />
+          <ButtonTop />
         </main>
       </div>
     </div>
