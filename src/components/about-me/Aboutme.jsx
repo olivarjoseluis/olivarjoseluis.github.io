@@ -10,7 +10,7 @@ const Aboutme = () => {
         <div className="row">
           <div className="c8">
             <div className="text-about-me">
-              <h2>About Me</h2>
+              <h2>Why should I be part of your team?</h2>
               <p>I’m a <strong>System Engineer</strong> with passion for technology and challenging things. I have 4 years of experience
                 as frontend developer, working as a key player team in different projects. for example, I worked building
                 web sites with <strong>Drupal</strong> and <strong>Wordpress</strong> during the last 2 years. But also I have knowledge working with
