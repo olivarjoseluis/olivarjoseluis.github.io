@@ -2,10 +2,12 @@
 
 #main {
   header {
+    transition: width 2s, height 2s, background-color .5s, transform 2s;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
+    position: relative;
     height: 40px;
     border-bottom: 1px solid rgba($dm-black, .15);
 
@@ -18,11 +20,66 @@
       }
     }
 
+    .mobile-items {
+      ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          width: 25px;
+          height: 25px;
+          margin-right: 24px;
+
+          &:last-child {
+            margin-right: unset;
+          }
+
+          &.burger-button {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+
+            svg {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      @media (min-width:961px) {
+        display: none;
+      }
+    }
+
     .links-nav {
       display: flex;
       margin: 0;
       padding: 0;
       list-style: none;
+
+      @media (max-width:961px) {
+        transition: width 2s, height 2s, background-color .5s, transform 2s;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100vh;
+        z-index: 11;
+        background-color: $dm-white;
+
+        &.active {
+          display: flex;
+        }
+      }
 
       li {
         margin-right: 10px;
@@ -31,15 +88,124 @@
           margin-right: unset;
         }
 
+        &.switch-desktop {
+          @media (max-width:961px) {
+            display: none;
+          }
+        }
+
         a {
           text-decoration: none;
           color: $dm-black;
+
+          &:hover {
+            text-decoration: underline;
+
+            @media (max-width:961px) {
+              text-decoration: none;
+            }
+          }
+
+          @media (max-width:961px) {
+            display: block;
+            text-align: center;
+            padding: 25px 0;
+            text-decoration: none;
+          }
         }
+
+        &.link-nav {
+          @media (max-width:961px) {
+            width: 60%;
+            margin: 0 auto;
+            display: block;
+            border-top: 1px solid rgba($dm-black, 0.1);
+
+            &:hover {
+              @media (max-width:961px) {
+                text-decoration: none;
+                background-color: rgba($dm-black, .15);
+              }
+            }
+
+            &:first-child {
+              border-top: unset;
+            }
+          }
+        }
+      }
+    }
+
+    .button-close {
+      display: none;
+      left: 90%;
+      position: absolute;
+      bottom: 90%;
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid rgba($dm-black, .9);
+      border-radius: 50%;
+      font-weight: 600;
+      cursor: pointer;
+      right: 12%;
+      top: 100%;
+      z-index: 12;
+
+      &.active {
+        display: flex;
+      }
+
+      @media (min-width:961px) {
+        display: none;
+      }
+
+      &:hover {
+        background-color: rgba($dm-black, .9);
+        color: $dm-white;
+        border: 3px solid rgba($dm-black, .1);
       }
     }
   }
 
   .dark-mode {
-    header {}
+    header {
+      border-bottom: 1px solid rgba($dm-white, .15);
+
+      .links-nav {
+        background-color: $dm-black;
+
+        li.link-nav {
+          @media (max-width:961px) {
+            border-top: 1px solid rgba($dm-white, .15);
+
+            &:first-child {
+              border-top: unset;
+            }
+          }
+        }
+
+        li {
+          a {
+            color: $dm-white;
+          }
+        }
+      }
+
+      .button-close {
+        border: 3px solid rgba($dm-white, .9);
+
+        &:hover {
+          border: 3px solid rgba($dm-white, .1);
+          color: $dm-black;
+          background-color: rgba($dm-white, .9);
+        }
+      }
+
+      .navbar-brand {
+        color: $dm-white;
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
 @import "./../../../styles/abstract";
 
-main {
+.app {
   .btn-mode-theme {
     width: 25px;
     height: 25px;
@@ -11,6 +11,7 @@ main {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: width 2s, height 2s, background-color .5s, transform 2s;
 
     &:hover {
       border: 2px solid $dm-black;
@@ -20,7 +21,7 @@ main {
   }
 }
 
-main.dark-mode {
+.app.dark-mode {
   .btn-mode-theme {
     background-color: rgba($dm-white, .15);
     color: $dm-white;

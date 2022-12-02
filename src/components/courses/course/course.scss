@@ -1,0 +1,87 @@
+@import "./../../../styles/abstract";
+
+.card.courses {
+  h2 {
+    text-align: center;
+  }
+
+  .card {
+    border: 1px solid rgba($dm-black, .3);
+    padding: 15px;
+    margin: 4px;
+    min-height: 240px;
+    transition: width 2s, height 2s, background-color .5s, transform 2s;
+
+    &:hover {
+      background-color: rgba($dm-black, 1);
+      color: $dm-white;
+    }
+
+    .header-card {
+      display: flex;
+      justify-content: flex-end;
+
+      .icon-school {
+        width: 20px;
+        height: 20px;
+
+        background-repeat: no-repeat;
+        filter: grayscale(45%);
+
+        &.coursera {
+          background-image: url(./../../../assets/courses/coursera-dark.svg);
+        }
+
+        &.platzi {
+          background-image: url(./../../../assets/courses/platzi-dark.svg);
+        }
+
+        &.udemy {
+          background-image: url(./../../../assets/courses/udemy-dark.svg);
+        }
+      }
+    }
+
+    .body-card {
+      .title-card {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      .description-card {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .card.courses {
+    .card {
+      border: 1px solid rgba($dm-white, .15);
+
+      &:hover {
+        background-color: rgba($dm-white, 1);
+        color: $dm-black;
+      }
+
+      .header-card {
+
+        .icon-school {
+          &.coursera {
+            background-image: url(./../../../assets/courses/coursera-light.svg);
+          }
+
+          &.platzi {
+            background-image: url(./../../../assets/courses/platzi-light.svg);
+          }
+
+          &.udemy {
+            background-image: url(./../../../assets/courses/udemy-light.svg);
+          }
+        }
+      }
+    }
+  }
+}

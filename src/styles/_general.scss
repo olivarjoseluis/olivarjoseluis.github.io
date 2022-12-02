@@ -7,6 +7,10 @@
   font-weight: 400;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   position: relative;
@@ -14,12 +18,12 @@ body {
   min-height: 100vh;
 }
 
-main.dark-mode {
+.app.dark-mode {
   background-color: $dm-black;
   color: $dm-white;
 }
 
-main.ligth-mode {
+.app.ligth-mode {
   background-color: rgba($dm-white, .15);
   color: $dm-black;
 }
@@ -29,4 +33,63 @@ main.ligth-mode {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+section {
+  margin-bottom: 70px;
+}
+
+.content {
+  main {
+    padding: 0px 150px;
+
+    @media(max-width:488px) {
+      padding: 0px 25px;
+    }
+
+    @media(max-width:768px) {
+      padding: 0px 50px;
+    }
+
+    @media(max-width:1080px) {
+      padding: 0px 100px;
+    }
+  }
+}
+
+.btn {
+  padding: 15px 20px;
+  border: 1px solid transparent;
+  transition: width 2s, height 2s, background-color .5s, transform 2s;
+}
+
+.btn-line {
+  border: 1px solid $dm-black;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $dm-black;
+    color: $dm-white;
+  }
+}
+
+.dark-mode {
+  .btn-line {
+    border: 1px solid $dm-white;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $dm-white;
+      color: $dm-black;
+    }
+  }
 }

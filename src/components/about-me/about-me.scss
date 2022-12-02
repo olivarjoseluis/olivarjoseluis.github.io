@@ -1,0 +1,25 @@
+section.about-me {
+  .container {
+    .row {
+      .c8 {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .text-about-me {
+        padding-right: 5%;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      .img-about-me {
+        .profile-picture {
+          width: 100%;
+          filter: grayscale(45%);
+        }
+      }
+    }
+  }
+}

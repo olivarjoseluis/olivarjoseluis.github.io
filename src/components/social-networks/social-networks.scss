@@ -1,0 +1,67 @@
+@import "../../styles/abstract";
+
+.social-networks {
+  /* border: 1px solid rgba($dm-black, .5); */
+  border-radius: 5px;
+  line-height: 0;
+  /* padding: 10px; */
+  //  position: absolute;
+  width: 40px;
+  position: fixed;
+  bottom: 30%;
+  left: 20px;
+  right: auto;
+  z-index: 10;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+
+    li {
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: unset;
+      }
+
+      a {
+        padding: 10px;
+        background-color: transparent;
+
+        .icon-social-network {
+          color: rgba($dm-black, .7);
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      &:hover {
+        a {
+          background-color: $primary;
+
+          .icon-social-network {
+            color: $dm-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .social-networks {
+    ul {
+      li {
+        a {
+          .icon-social-network {
+            color: rgba($dm-white, .7);
+          }
+        }
+      }
+    }
+  }
+}
