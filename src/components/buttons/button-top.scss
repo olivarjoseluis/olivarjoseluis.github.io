@@ -21,6 +21,11 @@
   &:hover {
     background-color: rgba($dm-black, .8);
   }
+
+  @media(max-width:768px) {
+    right: 0;
+    padding: 10px;
+  }
 }
 
 .dark-mode {
