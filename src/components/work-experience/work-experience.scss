@@ -135,6 +135,10 @@
       .content {
         .experience {
           color: $dm-black;
+
+          @media(min-width:501px) {
+            color: $dm-white;
+          }
         }
       }
     }
