@@ -11,7 +11,7 @@ const Aboutme = () => {
           <div className="c8">
             <div className="text-about-me">
               <h2>About Me</h2>
-              <p>I’m a <strong>Software Developer</strong> with passion for technology and things challenging. I have 4 years of experience
+              <p>I’m a <strong>System Engineer</strong> with passion for technology and challenging things. I have 4 years of experience
                 as frontend developer, working as a key player team in different projects. for example, I worked building
                 web sites with <strong>Drupal</strong> and <strong>Wordpress</strong> during the last 2 years. But also I have knowledge working with
                 <strong>JavaScript</strong>, most of it with <strong>React.js</strong>, I’m willing to participle in any react project so I can share all my

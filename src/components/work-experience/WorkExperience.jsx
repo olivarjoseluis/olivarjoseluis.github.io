@@ -32,8 +32,8 @@ const DetailExperience = ({ option }) => {
           <h4>Front-end Development - <a href="https://www.vmlyr.com/es-co/colombia" target="_blank" rel="noopener noreferrer">VMLY&R</a></h4>
           <p className='date'>July 2021 - November 2022</p>
           <ul>
-            <li>Develoment Frontend</li>
-            <li>Content Managent</li>
+            <li>As a Frontend Developer</li>
+            <li>Content Manager</li>
             <li>Issues Solver</li>
           </ul>
         </div>
@@ -45,8 +45,8 @@ const DetailExperience = ({ option }) => {
           <h4>Web Aux. - <a href="https://www.javerianacali.edu.co/" target="_blank" rel="noopener noreferrer">Pontifica Universidad Javeriana Cali</a></h4>
           <p className='date'>July 2019 - July 2021</p>
           <ul>
-            <li>Front-end Development</li>
-            <li>Content Managent</li>
+            <li>As a Front-end Developer</li>
+            <li>Content Manager</li>
           </ul>
         </div>
       )
