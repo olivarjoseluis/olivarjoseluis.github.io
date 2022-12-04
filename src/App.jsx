@@ -20,8 +20,8 @@ function App() {
         <main>
           <Great />
           <Aboutme />
-          <WorkExperience />
           <Skills />
+          <WorkExperience />
           <Courses />
           <GetInTouch />
           <ButtonTop />

@@ -84,7 +84,7 @@
 
 
         h4 {
-          margin-top: 0;
+          margin: 0;
 
           a {
             text-decoration: underline;
@@ -92,12 +92,16 @@
         }
 
         .date {
-          font-size: 14px;
+          font-size: 13px;
+          color: rgba($dm-black, .75);
         }
 
         ul {
           list-style: none;
           padding: 0;
+          margin-top: 4px;
+          font-size: 15px;
+          color: rgba($dm-black, .85);
 
           li {
             position: relative;
@@ -115,6 +119,87 @@
               transform: rotate(45deg);
             }
           }
+        }
+
+        .tools-used {
+          display: flex;
+
+          li {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: unset;
+
+            &.java {
+              &:hover {
+                background-color: $java;
+                color: $dm-white;
+              }
+            }
+
+            &.javascript {
+              &:hover {
+                background-color: $javaScript;
+                color: $dm-white;
+              }
+            }
+
+            &.php {
+              &:hover {
+                background-color: $php;
+                color: $dm-white;
+              }
+            }
+
+            &.golang {
+              &:hover {
+                background-color: $golang;
+                color: $dm-white;
+              }
+            }
+
+            &.react {
+              &:hover {
+                background-color: $react;
+                color: $dm-white;
+              }
+            }
+
+            &.github {
+              &:hover {
+                background-color: $github;
+                color: $dm-white;
+              }
+            }
+
+            &.drupal {
+              &:hover {
+                background-color: $drupal;
+                color: $dm-white;
+              }
+            }
+
+            &.wordpress {
+              &:hover {
+                background-color: $wordpress;
+                color: $dm-white;
+              }
+            }
+
+            &.sass {
+              &:hover {
+                background-color: $sass;
+                color: $dm-white;
+              }
+            }
+
+            &::before {
+              content: unset;
+            }
+          }
+
         }
       }
     }

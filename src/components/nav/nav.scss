@@ -140,7 +140,6 @@
       display: none;
       left: 90%;
       position: absolute;
-      bottom: 90%;
       width: 30px;
       height: 30px;
       justify-content: center;
@@ -159,6 +158,11 @@
 
       @media (min-width:961px) {
         display: none;
+      }
+
+      @media (max-width:500px) {
+        left: 80%;
+        top: 70%;
       }
 
       &:hover {
@@ -195,6 +199,7 @@
 
       .button-close {
         border: 3px solid rgba($dm-white, .9);
+
 
         &:hover {
           border: 3px solid rgba($dm-white, .1);

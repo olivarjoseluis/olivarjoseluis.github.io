@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhp, faJava, faJs, faGithub, faGolang, faWordpress, faDrupal, faSass, faReact } from "@fortawesome/free-brands-svg-icons";
 import "./work-experience.scss";
 import "./../../styles/grid.scss";
 
@@ -31,10 +33,35 @@ const DetailExperience = ({ option }) => {
         <div className="experience">
           <h4>Front-end Development - <a href="https://www.vmlyr.com/es-co/colombia" target="_blank" rel="noopener noreferrer">VMLY&R</a></h4>
           <p className='date'>July 2021 - November 2022</p>
+          <p className='description-experience'>In this job I realized the next activities: </p>
           <ul>
-            <li>As a Frontend Developer</li>
-            <li>Content Manager</li>
-            <li>Issues Solver</li>
+            <li>Front end development</li>
+            <li>Implementation of wireframes into content type of CMS</li>
+            <li>Implementation of subsites into CMS</li>
+            <li>Management of versions with Git</li>
+            <li>Implementation of new functionalities according to clients</li>
+            <li>Management of users</li>
+            <li>Solving of issues into different website</li>
+          </ul>
+          <ul className='tools-used'>
+            <li className='wordpress'>
+              <FontAwesomeIcon icon={faWordpress} />
+            </li>
+            <li className='drupal'>
+              <FontAwesomeIcon icon={faDrupal} />
+            </li>
+            <li className='php'>
+              <FontAwesomeIcon icon={faPhp} />
+            </li>
+            <li className='javascript'>
+              <FontAwesomeIcon icon={faJs} />
+            </li>
+            <li className='sass'>
+              <FontAwesomeIcon icon={faSass} />
+            </li>
+            <li className='github'>
+              <FontAwesomeIcon icon={faGithub} />
+            </li>
           </ul>
         </div>
       )
@@ -44,9 +71,33 @@ const DetailExperience = ({ option }) => {
         <div className="experience">
           <h4>Web Aux. - <a href="https://www.javerianacali.edu.co/" target="_blank" rel="noopener noreferrer">Pontifica Universidad Javeriana Cali</a></h4>
           <p className='date'>July 2019 - July 2021</p>
+          <p className='description-experience'>In this job I realized the next activities: </p>
           <ul>
-            <li>As a Front-end Developer</li>
-            <li>Content Manager</li>
+            <li>Front end development</li>
+            <li>Low and high level wireframes building</li>
+            <li>Implementation of wireframes into content type of CMS</li>
+            <li>Implementation of subsites into CMS</li>
+            <li>Management of versions with Git</li>
+            <li>Implementation of new functionalities according to clients</li>
+            <li>Management of users</li>
+            <li>Solving of issues into different website</li>
+          </ul>
+          <ul className='tools-used'>
+            <li className='drupal'>
+              <FontAwesomeIcon icon={faDrupal} />
+            </li>
+            <li className='php'>
+              <FontAwesomeIcon icon={faPhp} />
+            </li>
+            <li className='javascript'>
+              <FontAwesomeIcon icon={faJs} />
+            </li>
+            <li className='github'>
+              <FontAwesomeIcon icon={faGithub} />
+            </li>
+            <li className='sass'>
+              <FontAwesomeIcon icon={faSass} />
+            </li>
           </ul>
         </div>
       )

@@ -30,63 +30,63 @@ section.skills {
 
         &.java {
           &:hover {
-            background-color: #e62b2e;
+            background-color: $java;
             color: $dm-white;
           }
         }
 
         &.javascript {
           &:hover {
-            background-color: #f4dc1c;
+            background-color: $javaScript;
             color: $dm-white;
           }
         }
 
         &.php {
           &:hover {
-            background-color: #9c6ac7;
+            background-color: $php;
             color: $dm-white;
           }
         }
 
         &.golang {
           &:hover {
-            background-color: #1b54a3;
+            background-color: $golang;
             color: $dm-white;
           }
         }
 
         &.react {
           &:hover {
-            background-color: #63dbfb;
+            background-color: $react;
             color: $dm-white;
           }
         }
 
         &.github {
           &:hover {
-            background-color: #24292f;
+            background-color: $github;
             color: $dm-white;
           }
         }
 
         &.drupal {
           &:hover {
-            background-color: #019cde;
+            background-color: $drupal;
             color: $dm-white;
           }
         }
 
         &.wordpress {
           &:hover {
-            background-color: #24749b;
+            background-color: $wordpress;
             color: $dm-white;
           }
         }
 
         &.sass {
           &:hover {
-            background-color: #cb659b;
+            background-color: $sass;
             color: $dm-white;
           }
         }
