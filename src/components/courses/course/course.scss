@@ -27,13 +27,21 @@
           min-height: 240px;
           transition: width 2s, height 2s, background-color .5s, transform 2s;
 
-          @media(max-width:500px) {
-            min-height: 150px;
-          }
-
           &:hover {
             background-color: rgba($dm-black, 1);
             color: $dm-white;
+
+            .header-card {
+
+              .icon-school {
+                filter: invert(100%);
+                -webkit-filter: invert(100%);
+              }
+            }
+          }
+
+          @media(max-width:500px) {
+            min-height: 150px;
           }
 
           .header-card {
@@ -43,7 +51,6 @@
             .icon-school {
               width: 20px;
               height: 20px;
-
               background-repeat: no-repeat;
               filter: grayscale(45%);
 

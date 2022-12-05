@@ -58,8 +58,10 @@
             border-bottom: 1px solid rgba($dm-black, .05);
           }
 
-          &:last-child {
-            border-bottom: unset;
+          @media(min-width:500px) {
+            &:last-child {
+              border-bottom: unset;
+            }
           }
         }
       }
@@ -96,6 +98,10 @@
           color: rgba($dm-black, .75);
         }
 
+        .title-tools {
+          margin-bottom: 0;
+        }
+
         ul {
           list-style: none;
           padding: 0;
@@ -117,6 +123,10 @@
               border: 1px solid $primary;
               border-width: 2px 2px 0 0;
               transform: rotate(45deg);
+            }
+
+            .link-websites {
+              text-decoration: underline;
             }
           }
         }
