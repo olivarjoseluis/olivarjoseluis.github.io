@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhp, faJava, faJs, faGithub, faGolang, faWordpress, faDrupal, faSass, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faPhp, faJava, faJs, faGitAlt, faWordpress, faDrupal, faSass, faReact } from "@fortawesome/free-brands-svg-icons";
 import "./skills.scss";
 
 const Skills = () => {
@@ -21,14 +21,11 @@ const Skills = () => {
           <li className='php'>
             <FontAwesomeIcon icon={faPhp} />
           </li>
-          <li className='golang'>
-            <FontAwesomeIcon icon={faGolang} />
-          </li>
           <li className='react'>
             <FontAwesomeIcon icon={faReact} />
           </li>
-          <li className='github'>
-            <FontAwesomeIcon icon={faGithub} />
+          <li className='git'>
+            <FontAwesomeIcon icon={faGitAlt} />
           </li>
           <li className='drupal'>
             <FontAwesomeIcon icon={faDrupal} />

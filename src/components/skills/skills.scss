@@ -70,6 +70,13 @@ section.skills {
           }
         }
 
+        &.git {
+          &:hover {
+            background-color: $git;
+            color: $dm-white;
+          }
+        }
+
         &.drupal {
           &:hover {
             background-color: $drupal;

@@ -45,7 +45,7 @@ const DetailExperience = ({ option }) => {
           </ul>
           <p className='description-experience'>Multisite: </p>
           <ul>
-            <li><a className='link-websites' href="https://www.sherwin.com.ar/" target="_blank" rel="noopener noreferrer">Sherwin-Williams Conosouth</a></li>
+            <li><a className='link-websites' href="https://www.sherwin.com.ar/" target="_blank" rel="noopener noreferrer">Sherwin-Williams South cone</a></li>
           </ul>
           <p className='description-experience title-tools'>Tools: </p>
           <ul className='tools-used'>
@@ -87,7 +87,7 @@ const DetailExperience = ({ option }) => {
             <li>Management of users</li>
             <li>Solving of issues into different website</li>
           </ul>
-          <p className='description-experience'>Websites: </p>
+          <p className='description-experience'>Web sites: </p>
           <ul>
             <li><a className='link-websites' href="https://www.javerianacali.edu.co/" target="_blank" rel="noopener noreferrer">Pontifica Universidad Javeriana Cali</a></li>
             <li><a className='link-websites' href="https://emisora.javerianacali.edu.co/" target="_blank" rel="noopener noreferrer">Javeriana Estéreo Cali</a></li>

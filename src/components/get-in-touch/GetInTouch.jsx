@@ -6,7 +6,7 @@ const GetInTouch = () => {
     <section id='get-in-touch' className='get-in-touch'>
       <h2>Get In Touch</h2>
       <p></p>
-      <a href="mailto:olivarjoseluis9@gmail.com" className='btn btn-line'>Say Hello</a>
+      <a href="mailto:olivarjoseluis9@gmail.com" className='btn btn-primary'>Say Hello</a>
     </section>
   )
 }

@@ -86,6 +86,17 @@ section {
   }
 }
 
+.btn-primary {
+  border: 1px solid $dm-black;
+  background-color: $dm-black;
+  color: $dm-white;
+
+  &:hover {
+    background-color: $dm-white;
+    color: $dm-black;
+  }
+}
+
 .dark-mode {
   .btn-line {
     border: 1px solid $dm-white;
@@ -94,6 +105,17 @@ section {
     &:hover {
       background-color: $dm-white;
       color: $dm-black;
+    }
+  }
+
+  .btn-primary {
+    border: 1px solid $dm-white;
+    background-color: $dm-white;
+    color: $dm-black;
+
+    &:hover {
+      background-color: $dm-black;
+      color: $dm-white;
     }
   }
 }
