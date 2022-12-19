@@ -1,9 +1,13 @@
-import React from 'react'
+
 import Course from './course/Course';
 import "./../../styles/grid.scss";
+import "./courses.scss";
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Courses = () => {
-  const certificates = [
+
+  const totalCertificates = [
     {
       school: "coursera",
       title: "Introduction to User Experience Principles and Processes",
@@ -65,7 +69,20 @@ const Courses = () => {
       url: "https://platzi.com/p/olivarjoseluis9/curso/2242-webpack/diploma/detalle/"
     }
   ]
+  const [certificates, useCertificates] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const seeLess = () => {
+    useCertificates(totalCertificates.slice(0, 6));
+    setIsOpen(false);
+  }
+  const seeMore = () => {
+    useCertificates(totalCertificates);
+    setIsOpen(true);
+  }
+  useEffect(() => {
+    useCertificates(totalCertificates.slice(0, 6));
+  }, []);
   return (
     <section id='courses' className='card courses'>
       <div className="header-courses">
@@ -81,7 +98,9 @@ const Courses = () => {
             ))
           }
         </div>
-
+        <div className={isOpen ? 'see-more open' : 'see-more'}>
+          {!isOpen ? <button className='btn btn-see-more' onClick={() => seeMore()}>See More</button> : <button className='btn btn-see-more' onClick={() => seeLess()}>See Less</button>}
+        </div>
       </div>
     </section>
   )
