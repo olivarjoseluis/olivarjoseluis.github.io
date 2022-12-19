@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import "./social-networks.scss";
 
 const SocialNetworks = () => {
@@ -19,8 +19,13 @@ const SocialNetworks = () => {
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/olivarluisjose" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon className='icon-social-network' icon={faTwitter} />
+          <a href="mailto:olivarjoseluis9@gmail.com" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon className='icon-social-network' icon={faEnvelope} />
+          </a>
+        </li>
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=573148021412&text=Hi%20Jose," target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon className='icon-social-network' icon={faWhatsapp} />
           </a>
         </li>
       </ul>
