@@ -11,7 +11,7 @@ export function Sticker({
   return (
     <Tag
       {...rest}
-      className="inline-flex items-center justify-center gap-2 border-2 border-ink mono font-bold transition-[transform,box-shadow] duration-[180ms] ease-in-out"
+      className="inline-flex items-center justify-center gap-2 border-2 border-ink mono text-black font-bold transition-[transform,box-shadow] duration-[180ms] ease-in-out"
       style={{
         background: color,
         boxShadow: `${size}px ${size}px 0 0 ${shadow}`,
