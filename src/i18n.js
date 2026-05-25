@@ -43,7 +43,7 @@ const I18N = {
       title: "Cinco años, cuatro equipos, un foco.",
       jobs: [
         {
-          range: "2022 — Actualidad",
+          range: "2022 — 2025",
           company: "Factoría de Arte y Diseño S.L.U.",
           location: "España · Remoto",
           role: "Drupal Developer · Freelance",
@@ -171,7 +171,7 @@ const I18N = {
       title: "Five years, four teams, one focus.",
       jobs: [
         {
-          range: "2022 — Present",
+          range: "2022 — 2025",
           company: "Factoría de Arte y Diseño S.L.U.",
           location: "Spain · Remote",
           role: "Drupal Developer · Freelance",
