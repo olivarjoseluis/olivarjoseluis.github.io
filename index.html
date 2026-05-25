@@ -1,69 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBKVSS1JV5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-MBKVSS1JV5');
   </script>
+
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:url" content="http://joseluisolivar.co" />
+
+  <meta property="og:url" content="https://olivarjoseluis.github.io" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Jose Luis Olivar System Engineer" />
+  <meta property="og:title" content="Jose Luis Olivar // Full-Stack Developer" />
   <meta property="og:description"
-    content="I build things for humans, I’m a software Developer with passion for technology, UI and UX. I enjoy the challenging things." />
-  <meta property="og:image" content="https://joseluisolivar.co/assets/01.899a0a87.png" />
-  <!-- End metatags Facebook -->
-  <!-- Begin og meta tags Twitter -->
+    content="Diseño y construyo experiencias web pixel-perfect sobre el ecosistema Drupal. 5+ años trabajando en remoto con equipos en España y LATAM." />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@olivarluisjose" />
   <meta name="twitter:creator" content="@olivarluisjose" />
-  <meta property="og:url" content="http://joseluisolivar.co" />
-  <meta property="og:title" content="Jose Luis Olivar System Engineer" />
-  <meta property="og:description"
-    content="I build things for humans, I’m a software Developer with passion for technology, UI and UX. I enjoy the challenging things." />
-  <meta property="og:image" content="https://joseluisolivar.co/assets/01.899a0a87.png" />
-  <!-- End og meta tags Twitter -->
 
-  <title>Jose Luis Olivar | Frontend Developer</title>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Person",
-      "name": "Jose Luis Olivar",
-      "hasOccupation": [
-        {
-          "@type": "Role",
-          "hasOccupation": {
-          "@type": "Occupation",
-          "name": "Frontend Developer",
-            "occupationalCategory": "23-2099.00"
-          },
-          "startDate": "2019",
-          "endDate": "2022"
-        },
-        {
-          "@type": "Occupation",
-          "name": "System Engineer",
-          "educationRequirements": "Bachelor degree"
-        }
-      ]
+  <title>JOSE LUIS OLIVAR // FULL-STACK DEVELOPER</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <script src="/image-slot.js"></script>
+
+  <style>
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #0A0A0A;
+      color: #F2EDE0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 24px;
+      z-index: 9999;
+      transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     }
-    </script>
-  <script type="module" crossorigin src="/assets/index.899f6b93.js"></script>
-  <link rel="stylesheet" href="/assets/index.e8bfc4e7.css">
+
+    #loader.gone {
+      transform: translateY(-100%);
+    }
+
+    #loader .big {
+      font-family: "Archivo Black", "Helvetica Neue", sans-serif;
+      font-size: clamp(40px, 9vw, 100px);
+      line-height: 0.88;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+    }
+
+    @media(min-width: 600px) {
+      #loader .big {
+        font-family: "Archivo Black", "Helvetica Neue", sans-serif;
+        font-size: clamp(80px, 18vw, 200px);
+        line-height: 0.88;
+        text-transform: uppercase;
+        letter-spacing: -0.04em;
+      }
+    }
+
+    #loader .bar {
+      width: 200px;
+      height: 2px;
+      background: rgba(242, 237, 224, 0.2);
+      overflow: hidden;
+    }
+
+    #loader .bar>i {
+      display: block;
+      height: 100%;
+      background: #FF2D00;
+      animation: ld 1.2s ease-out forwards;
+    }
+
+    #loader .mono-sm {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    @keyframes ld {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index-Bl5IkdbW.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-qcXz6FJj.css">
 </head>
 
 <body>
-  <div id="main"></div>
-  
+  <div id="loader">
+    <div class="big">LOADING<span style="color:#FF2D00;">.</span></div>
+    <div class="bar"><i></i></div>
+    <div class="mono-sm">v.0.3.0 // CALI, CO</div>
+  </div>
+
+  <div id="root"></div>
 </body>
 
 </html>
