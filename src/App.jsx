@@ -1,34 +1,43 @@
-import { useSelector } from 'react-redux';
-import './App.css'
-import Aboutme from './components/about-me/Aboutme'
-import ButtonTop from './components/buttons/ButtonTop';
-import Courses from './components/courses/Courses';
-import GetInTouch from './components/get-in-touch/GetInTouch';
-import Great from './components/great/Great';
-import Nav from './components/nav/Nav';
-import Skills from './components/skills/Skills';
-import SocialNetworks from './components/social-networks/SocialNetworks';
-import WorkExperience from './components/work-experience/WorkExperience';
+import { useEffect } from 'react';
+import { LangProvider } from './contexts/LangContext';
+import { Nav } from './components/nav/Nav';
+import { Hero } from './components/hero/Hero';
+import { Metrics } from './components/metrics/Metrics';
+import { About } from './components/about/About';
+import { Process } from './components/process/Process';
+import { Experience } from './components/experience/Experience';
+import { Projects } from './components/projects/Projects';
+import { Stack } from './components/stack/Stack';
+import { Contact } from './components/contact/Contact';
 
 function App() {
-  const modeTheme = useSelector((state) => state.modeslice.mode);
+  useEffect(() => {
+    const el = document.getElementById('loader');
+    if (el) {
+      const t = setTimeout(() => {
+        el.classList.add('gone');
+        const t2 = setTimeout(() => el.remove(), 900);
+        return () => clearTimeout(t2);
+      }, 1100);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
   return (
-    <div className={modeTheme ? 'app ligth-mode' : 'app dark-mode'}>
+    <LangProvider>
       <Nav />
-      <SocialNetworks />
-      <div className="content">
-        <main>
-          <Great />
-          <Aboutme />
-          <Skills />
-          <WorkExperience />
-          <Courses />
-          <GetInTouch />
-          <ButtonTop />
-        </main>
-      </div>
-    </div>
-  )
+      <main>
+        <Hero />
+        <Metrics />
+        <About />
+        <Process />
+        <Experience />
+        <Projects />
+        <Stack />
+        <Contact />
+      </main>
+    </LangProvider>
+  );
 }
 
-export default App
+export default App;

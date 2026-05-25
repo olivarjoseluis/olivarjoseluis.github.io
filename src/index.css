@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-paper: #F2EDE0;
+  --color-ink: #0A0A0A;
+  --color-red: #FF2D00;
+  --color-yellow: #FFD400;
+  --color-blue: #2A4DFF;
+  --color-gray: #B8B2A3;
+
+  /* Typefaces */
+  --font-display: "Archivo Black", "Helvetica Neue", sans-serif;
+  --font-sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* CSS vars kept for JS-driven styles (Sticker, dynamic shadows) */
+:root {
+  --paper: #F2EDE0;
+  --ink: #0A0A0A;
+  --red: #FF2D00;
+  --yellow: #FFD400;
+  --blue: #2A4DFF;
+  --gray: #B8B2A3;
+  --ink-soft: color-mix(in srgb, #0A0A0A 20%, transparent);
+  --ink-soft-2: color-mix(in srgb, #0A0A0A 30%, transparent);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Paper grain */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.06;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection { background-color: var(--red); color: var(--paper); }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+}
+
+@layer components {
+  /* Typography shortcuts */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+    text-transform: uppercase;
+  }
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* Consistent max-width container used in every section except Hero and marquee */
+  .section-container {
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+
+  /* ── Hover-lift cards ─────────────────────────── */
+  .metric-card {
+    box-shadow: 6px 6px 0 0 var(--color-ink);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .metric-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 0 var(--color-ink);
+  }
+
+  /* Experience cards: shadow color fed via --card-shadow CSS var */
+  .exp-card {
+    box-shadow: 8px 8px 0 0 var(--card-shadow, var(--color-red));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .exp-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 0 var(--card-shadow, var(--color-red));
+  }
+
+  /* Project cards: rotation fed via --card-rotation, shadow via --tape-color */
+  .proj-card {
+    transform: rotate(var(--card-rotation, 0deg));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .proj-card:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 8px 8px 0 0 var(--tape-color, var(--color-red));
+  }
+
+  /* Project overlay: visible by default, fades out on card hover to reveal screenshot */
+  .proj-overlay {
+    transition: opacity 0.35s ease;
+  }
+  .proj-card:hover .proj-overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Process rows */
+  .process-row {
+    transition: background 0.2s ease, padding 0.2s ease;
+  }
+  .process-row:hover {
+    background-color: var(--color-yellow);
+    padding-inline: 1.25rem;
+  }
+
+  /* Contact grid responsive borders */
+  .contact-link {
+    border-right: 2px solid var(--color-ink);
+    border-bottom: 2px solid var(--color-ink);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .contact-link:hover { background-color: var(--color-ink); color: var(--color-paper); }
+  .contact-link:nth-child(even) { border-right: none; }
+  .contact-link:nth-last-child(-n+2) { border-bottom: none; }
+  @media (max-width: 639px) {
+    .contact-link { border-right: none !important; border-bottom: 2px solid var(--color-ink) !important; }
+    .contact-link:last-child { border-bottom: none !important; }
+  }
+}
+
+/* ── In-view animation ─────────────────────────── */
+.iv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.iv.in { opacity: 1; transform: translateY(0); }
+
+/* ── Marquee ───────────────────────────────────── */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}

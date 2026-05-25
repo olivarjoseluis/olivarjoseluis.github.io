@@ -1,44 +1,58 @@
-import React, { useState } from 'react'
-import SwitchModeTheme from './switch-mode-theme/SwitchModeTheme';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
-import "./../nav/nav.scss";
+import { useState, useEffect } from 'react';
+import { useLang } from '../../contexts/LangContext';
 
-function Nav() {
-  const [isOpen, setIsOpen] = useState(false);
+export function Nav() {
+  const { t, lang, setLang } = useLang();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header>
-      <a href='/' className='navbar-brand' aria-label='Jose Luis Olivar'><span>JL</span></a>
-      <div className="mobile-items">
-        <ul>
-          <li className='switch-mobile'><SwitchModeTheme /></li>
-          <li className='burger-button' onClick={() => setIsOpen(!isOpen)}><FontAwesomeIcon icon={faBars} /></li>
-        </ul>
-      </div>
-      <div className={isOpen ? 'button-close active' : 'button-close'} onClick={() => setIsOpen(!isOpen)}>
-        <FontAwesomeIcon icon={faX} />
-      </div>
-      <ul className={isOpen ? 'links-nav active' : 'links-nav'}>
-        <li onClick={() => setIsOpen(false)} className='link-nav'>
-          <a href='#about-me' aria-label='About Jose Luis Olivar'>About me</a>
-        </li>
-        <li onClick={() => setIsOpen(false)} className='link-nav'>
-          <a href='#work-experience' aria-label='Work experience of Jose Luis Olivar'>Work experience</a>
-        </li>
-        <li onClick={() => setIsOpen(false)} className='link-nav'>
-          <a href='#skills' aria-label='Education of Jose Luis Olivar'>Skills</a>
-        </li>
-        <li onClick={() => setIsOpen(false)} className='link-nav'>
-          <a href='#courses' aria-label='Education of Jose Luis Olivar'>Courses</a>
-        </li>
-        <li onClick={() => setIsOpen(false)} className='link-nav'>
-          <a href='#get-in-touch' aria-label='Get in touch with Jose Luis Olivar'>Get in touch</a>
-        </li>
-        <li className='switch-desktop'><SwitchModeTheme /></li>
-      </ul>
-    </header >
-  )
-}
+    <header className={`fixed top-0 left-0 right-0 z-50 border-b-2 transition-[background,border-color] duration-200 ${scrolled ? 'border-ink bg-paper' : 'border-transparent bg-transparent'}`}>
+      <div className="flex items-stretch justify-between min-h-[60px]">
 
-export default Nav
+        {/* Logo + badge */}
+        <div className="flex">
+          <a
+            href="#top"
+            className="inline-flex items-center justify-center px-5 bg-ink text-paper display text-[22px]"
+          >JL/</a>
+          <div className="hidden sm:inline-flex items-center px-4 border-x-2 border-ink bg-paper gap-2">
+            <span className="w-2 h-2 rounded-full bg-green-600 inline-block" />
+            <span className="mono font-bold">{t.nav.availability}</span>
+          </div>
+        </div>
+
+        {/* Links + lang toggle */}
+        <nav className="flex items-center">
+          {[
+            { href: '#metrics',    label: t.nav.work },
+            { href: '#experience', label: t.nav.experience },
+            { href: '#stack',      label: t.nav.stack },
+            { href: '#contact',    label: t.nav.contact },
+          ].map((it, i) => (
+            <a
+              key={i}
+              href={it.href}
+              className="mono hidden md:inline-flex items-center px-[18px] h-[60px] font-bold hover:bg-ink hover:text-paper transition-colors duration-150"
+            >{it.label}</a>
+          ))}
+
+          <div className="flex border-l-2 border-ink h-[60px]">
+            {['es', 'en'].map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`mono px-[14px] font-bold transition-colors duration-150 ${lang === l ? 'bg-red text-paper' : 'text-ink hover:bg-ink hover:text-paper'}`}
+              >{l.toUpperCase()}</button>
+            ))}
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+}
