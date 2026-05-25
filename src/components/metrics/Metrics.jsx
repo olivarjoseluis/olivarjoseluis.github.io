@@ -25,7 +25,7 @@ export function Metrics() {
             <IV key={i} delay={i * 60}>
               <div className={`metric-card border-2 border-ink p-5 min-h-[240px] flex flex-col justify-between ${cardBg[i]} ${cardFg[i]}`}>
                 <span className="mono font-bold opacity-70">#{String(i + 1).padStart(2, '0')}</span>
-                <div className="display text-[clamp(36px,4vw,72px)] leading-[0.9]">
+                <div className="display text-[clamp(36px,4vw,62px)] leading-[0.9]">
                   <AnimatedNum value={m.value} prefix={m.prefix || ''} suffix={m.suffix || ''} />
                 </div>
                 <p className="text-xs leading-snug font-medium">{m.label}</p>
